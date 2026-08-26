@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>2048 Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="game-header">
+      <div class="title-container">
+        <h1 class="title">2048</h1>
+        <p class="subtitle">Join numbers and get to the <strong>2048 tile!</strong></p>
+      </div>
+
+      <div class="scores-container">
+        <div class="score-box">
+          <span class="score-label">SCORE</span>
+          <span class="score-val" id="score">0</span>
+          <div class="score-addition" id="score-addition"></div>
+        </div>
+        <div class="score-box">
+          <span class="score-label">BEST</span>
+          <span class="score-val" id="best-score">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Toolbar / Controls -->
+    <div class="toolbar">
+      <div class="mode-buttons">
+        <button id="undo-btn" class="btn btn-secondary" title="Undo last move" disabled>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13"/></svg>
+          Undo
+        </button>
+        <button id="sound-btn" class="btn btn-secondary" title="Toggle Sound">
+          <span id="sound-icon">🔊</span>
+        </button>
+        <button id="theme-btn" class="btn btn-secondary" title="Toggle Dark Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+      </div>
+      <button id="restart-btn" class="btn btn-primary">New Game</button>
+    </div>
+
+    <!-- Game Board -->
+    <div class="game-container" id="game-container">
+      <!-- Background Grid (4x4) -->
+      <div class="grid-container" id="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <!-- Tile overlay container -->
+      <div class="tile-container" id="tile-container"></div>
+
+      <!-- Game Over / Win Overlays -->
+      <div class="game-message" id="game-message">
+        <p id="game-message-text"></p>
+        <div class="message-actions">
+          <button id="keep-going-btn" class="btn btn-secondary hidden">Keep Going</button>
+          <button id="retry-btn" class="btn btn-primary">Try Again</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions / Footer -->
+    <footer class="game-footer">
+      <p class="instructions">
+        <strong>HOW TO PLAY:</strong> Use your <strong>Arrow keys</strong>, <strong>WASD</strong>, or <strong>Swipe</strong> on touchscreens to move tiles. When two tiles with the same number collide, they <strong>merge into one!</strong>
+      </p>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
