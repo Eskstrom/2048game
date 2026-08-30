@@ -25,6 +25,15 @@ A fast, modern, and responsive implementation of the classic **2048** puzzle gam
 - 🔊 **Web Audio Synthesizer**: Zero-dependency procedural audio feedback for moves, merges, game over, and victory.
 - 💾 **Local Storage Persistence**: Automatically remembers your Best High Score across browser sessions.
 
+## ⌨️ Controls
+
+| Action | Desktop | Mobile |
+|---|---|---|
+| Move tiles | Arrow keys or `W` `A` `S` `D` | Swipe in any direction |
+| Undo | **Undo** button | **Undo** button |
+| Start over | **New Game** button | **New Game** button |
+| Toggle sound or theme | Toolbar buttons | Toolbar buttons |
+
 ---
 
 ## 🚀 Getting Started
@@ -42,6 +51,16 @@ open index.html
 # On Linux:
 xdg-open index.html
 ```
+
+No build step or server is required—the game is a self-contained static site.
+For the best mobile testing experience, serve the folder with any local static
+web server and open it from a device on the same network.
+
+## 📁 Project Structure
+
+- `index.html` — page structure and game controls
+- `style.css` — responsive layout, animations, and themes
+- `game.js` — board logic, input handling, scoring, and persistence
 
 ---
 
